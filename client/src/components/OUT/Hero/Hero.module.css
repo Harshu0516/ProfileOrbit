@@ -1,0 +1,327 @@
+:root {
+  --bg: #020817;
+  --text: #e8f0fe;
+  --muted: #8ea0c0;
+  --accent: #00e5ff;
+  --border: #1a2740;
+  --card: #04152d;
+  --surface: #081426;
+}
+
+* {
+  box-sizing: border-box;
+}
+.hero {
+  display: flex;
+  justify-content: space-around;
+  min-height: 70vh;
+  padding: 170px 7%;
+  color: white; 
+  border-bottom: 2px solid #0f244b;;
+}
+
+.leftSide {
+  /* background-color: aqua; */
+  max-width: 60vw;
+  flex: 1;
+}
+
+.leftSide h1 {
+  font-size: 67px;
+  letter-spacing: 2.1px;
+  margin-bottom: 20px;
+  line-height: 76px;
+}
+
+.leftSide p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+
+  /* color: var(--muted); */
+
+  margin-bottom: 38px;
+}
+
+.buttonInfo {
+  display: flex;
+  gap: 10px;
+
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 7px 16px;
+
+  text-decoration: none;
+  letter-spacing: 0.05em;
+
+  border-radius: 4px;
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+
+  transition: 0.25s ease;
+}
+
+.btnBlack {
+  background: transparent;
+  color: white;
+
+  border: 1px solid #1a2740;
+}
+
+.btnBlack:hover {
+  border-color: #00e5ff;
+  color: #00e5ff;
+}
+
+.btnColor {
+  background: #00e5ff;
+  color: #000;
+}
+
+.btnColor:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.5);
+}
+
+.rightSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex: 1; */
+}
+
+.codeFloatInner {
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 30px rgba(30, 148, 161, 0.08),
+    0 24px 60px rgba(29, 195, 213, 0.631);
+
+  animation: fadeUp 1s ease;
+}
+
+.codeTopbar {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 18px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.d1 {
+  background: #ff5f57;
+}
+
+.d2 {
+  background: #febc2e;
+}
+
+.d3 {
+  background: #28c840;
+}
+.codeFname {
+  margin-left: 10px;
+
+  font-size: 0.76rem;
+  color: var(--muted);
+
+  font-family: "Space Mono", monospace;
+}
+
+.pre {
+  padding: 24px;
+
+  overflow-x: auto;
+  font-size: 0.8rem;
+  line-height: 1.9;
+
+  color: white;
+
+  font-family: "Space Mono", monospace;
+}
+.kw {
+  color: #c792ea;
+}
+
+.fn {
+  color: #82aaff;
+}
+
+.str {
+  color: #c3e88d;
+}
+
+.cm {
+  color: #546e7a;
+}
+
+.num {
+  color: #f78c6c;
+}
+
+.va {
+  color: var(--accent);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero {
+    gap: 40px;
+    padding: 140px 5%;
+  }
+
+  .leftSide h1 {
+    font-size: 56px;
+    line-height: 64px;
+  }
+}
+
+@media (max-width: 950px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    padding: 120px 5% 80px;
+    min-height: auto;
+  }
+
+  .leftSide {
+    max-width: 100%;
+    margin: 4rem;
+  }
+
+
+  .leftSide h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  .buttonInfo {
+    justify-content: center;
+  }
+
+  .rightSide {
+    width: 100%;
+  }
+
+  .codeFloatInner {
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 110px 20px 60px;
+  }
+
+  .leftSide h1 {
+    font-size: 2.4rem;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+
+  .leftSide p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .codeFloatInner {
+    max-width: 100%;
+  }
+
+  .pre {
+    font-size: 0.72rem;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 95px 16px 50px;
+  }
+
+  .leftSide h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    letter-spacing: 1px;
+  }
+
+  .leftSide p {
+    font-size: 0.9rem;
+  }
+
+  .buttonInfo {
+    flex-direction: column;
+    width: 100%;
+    gap: 18px;
+  }
+  
+
+  .btn {
+    width: 50%;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .codeTopbar {
+    padding: 0 12px;
+  }
+
+  .codeFname {
+    font-size: 0.65rem;
+  }
+
+  .pre {
+    font-size: 0.65rem;
+    line-height: 1.7;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .leftSide h1 {
+    font-size: 1.7rem;
+  }
+
+  .leftSide p {
+    font-size: 0.85rem;
+  }
+
+  .pre {
+    font-size: 0.58rem;
+  }
+}

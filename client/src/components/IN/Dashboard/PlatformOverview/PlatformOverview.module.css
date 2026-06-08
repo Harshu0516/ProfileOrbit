@@ -1,0 +1,198 @@
+:root {
+  --bg: #0a0c10;
+  --bg1: #0e1118;
+  --bg2: #131720;
+  --bg3: #1a1f2e;
+
+  --border: #ffffff12;
+  --border2: #ffffff1e;
+  --border3: #ffffff30;
+
+  --text: #e8eaf0;
+  --text2: #8b90a0;
+
+  --cyan: #00d4ff;
+  --green: #00e676;
+  --orange: #ff8c42;
+  --purple: #a855f7;
+
+  --radius: 14px;
+}
+
+
+/* SECTION HEADING */
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.sectionTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text2);  
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.seperator {
+  flex: 1;
+  height: 1px;
+  background: var(--border2);
+}
+
+
+.grid4_2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.platformCard {
+  background: black;
+  border: 1px solid #ffffff1e;
+  border-radius: 14px;
+  padding: 20px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.leet:hover {
+  transform: translateY(-4px);
+  border: 1px solid var(--orange);
+}
+.chef:hover {
+    transform: translateY(-4px);
+    border: 1px solid var(--cyan);
+}
+.gfg:hover {
+    transform: translateY(-4px);
+    border: 1px solid var(--green);
+}
+.github:hover {
+    transform: translateY(-4px);
+    border: 1px solid var(--purple);
+}
+
+.platHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.platLogo {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 700;
+}
+
+.leetLogo {
+  background: rgba(255, 161, 22, 0.15);
+  color: var(--orange);
+}
+
+.chefLogo {
+  background: rgba(91, 143, 238, 0.15);
+  color: var(--cyan);
+}
+
+.gfgLogo {
+  background: rgba(47, 141, 70, 0.15);
+  color: var(--green);
+}
+
+.githubLogo {
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--purple);
+}
+
+.platName {
+  color: white;
+  font-weight: 600;
+  /* font-weight: 600; */
+    font-size: 14px;
+}
+
+.platSub {
+  color: #8b90a0;
+  font-size: 11px;
+}
+
+
+.platStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.platStat {
+  background: #1a1f2e;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.v {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.k {
+  color: #8b90a0;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.platBadge {
+  margin-top: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.gold {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--orange);
+}
+
+.blue {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  color: var(--cyan);
+}
+
+.green {
+  background: rgba(0, 230, 118, 0.15);
+  color: #00e676;
+  color: var(--green);
+}
+
+.purple {
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--purple);
+}
+
+@media (max-width: 1200px) {
+  .grid4_2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid4_2 {
+    grid-template-columns: 1fr;
+  }
+}

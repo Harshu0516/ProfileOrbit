@@ -1,0 +1,199 @@
+:root {
+  --bg: #0a0c10;
+  --bg1: #0e1118;
+  --bg2: #131720;
+  --bg3: #1a1f2e;
+
+  --border: #ffffff12;
+  --border2: #ffffff1e;
+  --border3: #ffffff30;
+
+  --text: #e8eaf0;
+  --text2: #8b90a0;
+
+  --cyan: #00d4ff;
+  --green: #00e676;
+  --orange: #ff8c42;
+  --purple: #a855f7;
+
+  --radius: 14px;
+}
+
+/* SECTION HEADING */
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.sectionTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.seperator {
+  flex: 1;
+  height: 1px;
+  background: var(--border2);
+}
+
+/* GRID */
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+/* CARD */
+
+.statCard {
+  background: black;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--border3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* TOP BORDER */
+
+.statCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+}
+
+/* COLORS */
+.c1::before {
+  background: var(--green);
+}
+
+.c2::before {
+  background: var(--orange);
+}
+
+.c3::before {
+  background: var(--purple);
+}
+
+.c4::before {
+  background: var(--cyan);
+}
+
+
+
+/* ICON */
+
+.statCardIcon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  font-size: 1.4rem;
+
+  margin-bottom: 16px;
+}
+
+.c1 .statCardIcon {
+  background: rgba(0, 230, 118, 0.12);
+  border: 1px solid rgba(0, 230, 118, 0.25);
+}
+
+.c2 .statCardIcon {
+  background: rgba(255, 140, 66, 0.12);
+  border: 1px solid rgba(255, 140, 66, 0.25);
+}
+
+.c3 .statCardIcon {
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.c4 .statCardIcon {
+  background: rgba(0, 212, 255, 0.12);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+}
+
+/* VALUE */
+
+.statCardValue {
+  font-size: 32px;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1;
+}
+
+.c1 .statCardValue {
+  color: var(--green);
+}
+
+.c2 .statCardValue {
+  color: var(--orange);
+}
+
+.c3 .statCardValue {
+  color: var(--purple);
+}
+
+.c4 .statCardValue {
+  color: var(--cyan);
+}
+
+/* DESCRIPTION */
+
+.statCardDesc {
+  color: var(--text2);
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .grid4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .grid4 {
+    grid-template-columns: 1fr;
+  }
+
+  .statCard {
+    padding: 18px;
+  }
+
+  .statCardValue {
+    font-size: 1.7rem;
+  }
+
+  .statCardIcon {
+    width: 46px;
+    height: 46px;
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,150 @@
+.container {
+  padding: 100px 60px;
+  color: white;
+  min-height: 70vh;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.title h1 {
+  font-size: 67px;
+  letter-spacing: 2.1px;
+  margin-bottom: 20px;
+  /* line-height: 76px; */
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.box {
+  background: var(--card);
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s;
+}
+.featuresHead {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.featuresDesc {
+  font-size: 0.87rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.box:hover {
+  background: var(--surface);
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.box:hover::before {
+  transform: scaleX(1);
+}
+
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 80px 40px;
+  }
+
+  .title h1 {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 70px 24px;
+  }
+
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .title h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .box {
+    padding: 28px 24px;
+  }
+
+  .featuresHead {
+    font-size: 1rem;
+  }
+
+  .featuresDesc {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 60px 16px;
+  }
+
+  .title h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .features {
+    border-radius: 8px;
+  }
+
+  .box {
+    padding: 22px 18px;
+  }
+
+  .featuresHead {
+    font-size: 0.95rem;
+  }
+
+  .featuresDesc {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 360px) {
+  .title h1 {
+    font-size: 28px;
+  }
+
+  .box {
+    padding: 18px 14px;
+  }
+
+  .featuresDesc {
+    font-size: 0.75rem;
+  }
+}

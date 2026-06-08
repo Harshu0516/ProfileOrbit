@@ -1,0 +1,90 @@
+:root {
+  --bg: #0a0c10;
+  --border: #1e2330;
+  --card: #13161f;
+  --text: #e4e8f5;
+  --muted: #5a6075;
+  --easy: #22c55e;
+  --medium: #f59e0b;
+  --hard: #ef4444;
+  --pa: #00e5ff;
+  --pa-rgb: 0, 229, 255;
+  --pa2: #7c5cfc;
+}
+
+/* .main {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) 1fr;
+  gap: 1.5rem;
+  align-items: start;
+} */
+
+.main {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  padding: calc(65px + 2rem) 2rem 2rem;
+
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  min-height: calc(100vh - 200px);
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: calc(65px + 1rem) 1rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .main {
+    padding: calc(65px + 0.75rem) 0.75rem 0.75rem;
+  }
+}
+
+/* .main{
+ 
+    max-width: 1280px;
+    grid-template-columns: 340px 1fr;
+    
+    
+} */
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes barGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 992px) {
+  .main {
+    grid-template-columns: 1fr;
+    padding: calc(65px + 1rem) 1.25rem 1rem;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: calc(65px + 1rem) 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: calc(65px + 0.75rem) 0.75rem;
+  }
+}

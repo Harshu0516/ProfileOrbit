@@ -1,0 +1,142 @@
+:root {
+  --border: #1e2330;
+  --text: #e4e8f5;
+  --muted: #5a6075;
+  --easy: #22c55e;
+  --medium: #f59e0b;
+  --hard: #ef4444;
+  --pa: #00e5ff;
+}
+
+.summaryRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  animation: fadeUp 0.5s 0.15s ease both;
+}
+
+.statCard {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+  /* max-width: 11rem;  */
+  width: 100%;
+}
+
+.statCardTotal:hover {
+  transform: translateY(-3px);
+  border-color: var(--pa);
+  transition: all 0.3s ease;
+}
+.statCardEasy:hover {
+  transform: translateY(-3px);
+  border-color: var(--easy);
+  transition: all 0.3s ease;
+}
+.statCardMedium:hover {
+  transform: translateY(-3px);
+  border-color: var(--medium);
+  transition: all 0.3s ease;
+}
+.statCardHard:hover {
+  transform: translateY(-3px);
+  border-color: var(--hard);
+  transition: all 0.3s ease;
+}
+
+.scLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.Total{
+  color: var(--pa);
+
+}
+.Easy {
+  color: var(--easy);
+}
+.Medium {
+  color: var(--medium);
+}
+.Hard {
+  color: var(--hard);
+}
+
+.scValue {
+  font-family: "Space Mono", monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.scSub {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  .summaryRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  .summaryRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+  }
+
+  .scValue {
+    font-size: 1.6rem;
+  }
+
+  .scLabel {
+    font-size: 0.65rem;
+  }
+
+  .scSub {
+    font-size: 0.65rem;
+  }
+}
+
+/* Small mobile (≤355px) */
+@media (max-width: 355px) {
+  .summaryRow {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem;
+  }
+
+  .statCard {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .scValue {
+    font-size: 1.4rem;
+  }
+
+  .scLabel {
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
+  }
+
+  .scSub {
+    font-size: 0.6rem;
+  }
+}

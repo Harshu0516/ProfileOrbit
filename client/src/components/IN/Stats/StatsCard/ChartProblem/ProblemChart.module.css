@@ -1,0 +1,156 @@
+.bottomRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.donutCard{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.5rem;
+  width: 100%;
+}
+
+
+/* Difficulty BreakDown */
+.prTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.1rem;
+  text-align: start;
+}
+.diffBar {
+  margin-bottom: 0.85rem;
+}
+.diffTop {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+}
+.diffName {
+  font-weight: 700;
+}
+
+.easyLabel {
+  color: #22c55e;
+}
+.mediumLabel {
+  color: #f59e0b;
+}
+.hardLabel {
+  color: #ef4444;
+}
+
+.easyBar {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  animation-delay: 0.3s;
+}
+.mediumBar {
+  background: linear-gradient(90deg, #d97706, #f59e0b);
+  animation-delay: 0.4s;
+}
+.hardBar {
+  background: linear-gradient(90deg, #dc2626, #ef4444);
+  animation-delay: 0.5s;
+}
+
+.diffCount {
+  font-family: "Space Mono", monospace;
+  color: var(--muted);
+}
+.barTrack {
+  height: 7px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 6px;
+  transform-origin: left;
+  animation: barGrow 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+
+/* BadgeSection */
+.badgeSection{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.5rem;
+  width: 100%;
+}
+
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  .bottomRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .donutCard,
+  .badgeSection {
+    width: 100%;
+  }
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  .donutCard,
+  .badgeSection {
+    padding: 1rem 1rem;
+  }
+
+  .prTitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .diffTop {
+    font-size: 0.75rem;
+  }
+
+  .barTrack {
+    height: 6px;
+  }
+
+  .diffCount {
+    font-size: 0.72rem;
+  }
+}
+
+/* Small mobile (≤355px) */
+@media (max-width: 355px) {
+  .donutCard,
+  .badgeSection {
+    padding: 0.85rem 0.85rem;
+  }
+
+  .prTitle {
+    font-size: 0.82rem;
+  }
+
+  .diffTop {
+    font-size: 0.7rem;
+  }
+
+  .diffBar {
+    margin-bottom: 0.65rem;
+  }
+
+  .diffName {
+    font-size: 0.7rem;
+  }
+
+  .diffCount {
+    font-size: 0.68rem;
+  }
+}

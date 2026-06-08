@@ -1,0 +1,282 @@
+.bottomRow {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1.2rem;
+}
+
+
+
+.activityInfo{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.heatmapCard:hover,
+.activityInfo:hover{
+  border-color: aqua;
+  transform: translateY(-3px);
+  transition: all 0.3 ease;
+}
+
+
+
+.extraCard {
+ 
+  background-color: #13161f;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.extraIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.fire {
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.trophy {
+  background: rgba(245, 158, 11, 0.12);
+}
+
+.code {
+  background: rgba(var(--pa-rgb), 0.1);
+  transition: background 0.3s;
+}
+
+.extraLabel {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.extraVal {
+  font-family: "Space Mono", monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+
+/* Heatmap */
+
+
+.heatmapCard {
+  /* background: var(--card); */
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.5rem;
+}
+
+
+
+.heatmapCard h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: white;
+}
+
+
+
+
+
+.heatGrid {
+  display: grid;
+  grid-template-columns: repeat(26, 1fr);
+  gap: 3px;
+}
+
+.heatCell {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.04);
+  transition: transform 0.1s;
+  cursor: default;
+}
+
+.heatCell:hover {
+  transform: scale(1.3);
+}
+
+.l1 {
+  background: rgba(var(--pa-rgb), 0.15);
+}
+
+.l2 {
+  background: rgba(var(--pa-rgb), 0.35);
+}
+
+.l3 {
+  background: rgba(var(--pa-rgb), 0.6);
+}
+
+.l4 {
+  background: rgba(var(--pa-rgb), 0.9);
+}
+
+.heatFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.heatMonths {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.68rem;
+  color: var(--muted);
+  font-family: "Space Mono", monospace;
+}
+
+.heatScale {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.scaleCell {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+
+/* Tablet (≤900px) — stack achievement cards side-by-side below heatmap */
+@media (max-width: 900px) {
+  .bottomRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .activityInfo {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .extraCard {
+    flex: 1 1 45%;
+  }
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  .activityInfo {
+    /* flex-direction: column; */
+    gap: 0.65rem;
+  }
+
+  .extraCard {
+    flex: 1 1 100%;
+  }
+
+  .heatmapCard {
+    padding: 1rem 1rem;
+    overflow: hidden;
+  }
+
+  .heatGrid {
+    grid-template-columns: repeat(26, 1fr);
+    gap: 2px;
+  }
+
+  .heatmapCard h3 {
+    font-size: 0.88rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .heatMonths {
+    gap: 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  .heatScale {
+    font-size: 0.6rem;
+    gap: 0.2rem;
+  }
+
+  .scaleCell {
+    width: 8px;
+    height: 8px;
+  }
+
+  .extraVal {
+    font-size: 1.05rem;
+  }
+
+  .extraLabel {
+    font-size: 0.65rem;
+  }
+}
+
+/* Small mobile (≤355px) */
+@media (max-width: 355px) {
+  .heatmapCard {
+    padding: 0.85rem 0.75rem;
+  }
+
+  .heatGrid {
+    gap: 1.5px;
+  }
+
+  .heatmonths {
+    display: none;
+  }
+
+  .heatMonths span:nth-child(even) {
+    display: none;
+  }
+
+  .heatFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .extraCard {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .extraIcon {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+
+  .extraVal {
+    font-size: 0.95rem;
+  }
+
+  .extraLabel {
+    font-size: 0.6rem;
+  }
+}
